@@ -1,17 +1,15 @@
 import React, { useState } from 'react';
 
-import './styles/App.scss';
-
-import itemsList from './data/itemsList'
+import List from './components/List';
 import monthsList from './data/monthsList';
+
+import './styles/App.scss';
 
 const App = () => {
   const date = new Date();
   const currentMonth = date.getMonth();
 
   const [month, setMonth] = useState(currentMonth);
-
-  const items = itemsList.filter( item => item.months.includes(month))
 
   return (
     <div className="app">
@@ -32,11 +30,7 @@ const App = () => {
           )) }
         </select>
 
-        <ul className="list">
-          { items.map((item) => (
-            <li className="list-item" key={item.name} >{item.name}</li>
-          )) }
-        </ul>
+        <List monthSelected={month}></List>
         
       </main>
     </div>
