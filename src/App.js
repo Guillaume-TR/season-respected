@@ -2,6 +2,7 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
 import ByMonth from 'components/ByMonth';
+import ByIngredient from 'components/ByIngredient';
 
 import './styles/App.scss';
 
@@ -15,7 +16,9 @@ const App = () => (
         <Route exact path={["/", "by-month"]}>
           <ByMonth />
         </Route>
-        
+        <Route exact path="/by-ingredient">
+          <ByIngredient />
+        </Route>
       </Switch>
     </main>
   </div>
