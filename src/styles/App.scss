@@ -1,24 +1,27 @@
+@import 'variables';
+
 .app {
   text-align: center;
 }
 
 .header {
   padding: 1rem 0;
-  font-size: 1.5rem;
-  color: #f1f1f1;
-  background-color: #391a8d;
+  font-size: 1.75rem;
+  color: $c-neutral-lighter;
+  background-color: $c-primary-dark;
 
   &-menu {
     &-links {
+      z-index: 99;
       position: fixed;
       display: none;
-      justify-content: flex-start;
-      flex-direction: column;
       top: 0;
       right: 0;
       bottom: 0;
       left: 0;
-      background-color: #313131;
+      justify-content: flex-start;
+      flex-direction: column;
+      background-color: $c-neutral-dark;
 
       & .link {
         position: relative;
@@ -34,24 +37,25 @@
         }
 
         &.active, &:hover, &focus {
+          color: $c-neutral-dark;
           background-color: #92BF64;
-          color: #424242;
-          border: solid #424242 2px;
+          border: solid $c-neutral-dark 2px;
         }
 
         &:hover, &focus {
-          background-color: rgba(145, 191, 99, .75);
           color: #cfcfcf;
-          border: solid #424242 2px;
+          background-color: rgba(145, 191, 99, .75);
+          border: solid $c-neutral-dark 2px;
         }
       }
     }
     &-button {
+      z-index: 99;
       position: fixed;
-      bottom: 1rem;
       right: 1rem;
-      font-size: 1.5rem;
+      bottom: 1rem;
       padding: .4rem .7rem .5rem;
+      font-size: 1.5rem;
       color: #f1f1f1;
       background-color: rgba(78, 78, 78, 0.5);
       border: solid 1px rgba(241, 241, 241, .75);
@@ -64,14 +68,14 @@
         display: flex;
       }
       .header-menu-button {
+        right: 0;
         bottom: 0;
         left: 0;
-        right: 0;
         width: 100%;
         height: 10%;
         padding: 0;
         font-size: 3rem;
-        color: #333;
+        color: $c-neutral-dark;
         background-color: #e0e0e0;
 
         & span {
@@ -85,28 +89,4 @@
 
   }
 
-}
-
-.main {
-  .month {
-    width: 100%;
-    padding: .7rem 0;
-    font-size: 1.3rem;
-    text-align: center;
-    color: #171717;
-    background-color: #F2F2F2;
-    appearance: none;
-    border: none;
-  }
-
-  .list {
-    text-align: left;
-    padding: 1rem 2rem;
-
-    &-item {
-      padding: 1rem;
-      color: #F0F0F0;
-      border-bottom: solid 1px #6D6D6D;
-    }
-  }
 }
