@@ -1,21 +1,20 @@
 import React, { useState } from 'react';
 import { Switch, Route, NavLink } from 'react-router-dom';
+import classNames from 'classnames';
 
 import ByMonth from 'components/ByMonth';
 import ByIngredient from 'components/ByIngredient';
 
-import './styles/App.scss';
+import './styles/app.scss';
 
 const App = () => {
   const [menuActive, setMenuActive] = useState(false);
-
-  const menuClass = menuActive ? 'menu-active' : '';
 
   return (
     <div className="app">
       <header className="header">
         <h1  className="header-title">Season respected</h1>
-        <div className={`header-menu ${menuClass}`}>
+        <div className={classNames('header-menu', { 'menu-active': menuActive })}>
           <div className="header-menu-links">
             <NavLink 
               className="link" 

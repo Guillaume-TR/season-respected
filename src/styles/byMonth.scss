@@ -1,0 +1,39 @@
+@import 'variables';
+
+.select-list {
+  appearance: none;
+  width: 100%;
+  padding: .7rem 0;
+  font-size: 1.3rem;
+  text-align: center;
+  color: $c-neutral-lighter;
+  background-color: $c-neutral-darker;
+  border: none;
+}
+
+.list {
+  padding: 1rem 2rem;
+  text-align: left;
+
+  &-item {
+    position: relative;
+    height: 3rem; 
+    margin: 1rem 0;
+    padding: 1rem 0 1rem 4.25rem;
+    color: $c-neutral-dark;
+    background-color: $c-neutral-light;
+    border-radius: 5px;
+
+    &::before {
+      position: absolute;
+      top: -0.5rem;
+      left: -0.5rem;
+      content: "";
+      width: 4rem;
+      height: 4rem;
+      border: .5rem solid $c-neutral-lighter;
+      background-color: $c-primary-light;
+      border-radius: 50%;
+    }
+  }
+}

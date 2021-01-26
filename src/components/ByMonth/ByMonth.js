@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import monthsList from 'data/monthsList';
 import ingredientsList from 'data/ingredientsList';
 
+import 'styles/byMonth.scss';
+
 const ByMonth = () => {
   const date = new Date();
   const currentMonth = date.getMonth();
@@ -13,10 +15,10 @@ const ByMonth = () => {
 
   return (
     <>
-      <select className="month" id="month" defaultValue={month}>
+      <select className="select-list" id="select-list" defaultValue={month}>
         { monthsList.map((item) => (
           <option
-            className="month-name" value={item.number} 
+            className="select-list-item" value={item.number} 
             onClick={() => setMonth(item.number)}
             key={item.name}
           >
